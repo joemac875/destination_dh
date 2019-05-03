@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+  <title>Network | Basic usage</title>
+
+  <script type="text/javascript" src="./node_modules/vis/dist/vis.js"></script>
+  <link href="./node_modules/vis/dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+<body>
+
+
+<div id="mynetwork"></div>
+<div class="textChunk">
+  <div id="toggle1">
+      <h1>Author's Statement</h1>
+
+      <p>This site details my journey through Dr. Jacob Heil's Intro to Digital Humanities course through a series of <strong>sign-posts</strong>. Each sign-post contains a response to a central theme from the semester, with the goal of arriving at a deeper understanding of what Digital Humanities is. The final sign-post acts as a synthesis of the previous responses and content learned in class in order to answer this question.</p>
+
+  </div>
+  <div id="toggle2">
+
+    <h1>Foreword</h1>
+    <p>
+    During the first part of the course, we attempted to demystify technology and talked about some power structures behind it.
+    We played around with creating our own websites, and watched Ben Mendelsohn's <strong>Bundled, Buried & Behind Closed Doors</strong>,
+    which talks about the actual infrastructure behind the internet. This, and the content of Langdon Winner's <strong>Do Artifact's Have Politics</strong> fueled the following response to
+    the question of how power structures are present in the internet.
+    </p>
+    <h1>Response</h1>
+      <p>
+      Recently, Amazon chose Austin as the location of their HQ2 after a heated and often controversial period of bidding from competing candidate cities. The arrival of this tech powerhouse is expected to bring around <a href="http://sfullerinstitute.gmu.edu/amazon-hq2/">50,000 new jobs with it</a>, and for many cities in America trying desperately to rebrand their struggling economies, it could have been the golden ticket. New Jersey alone offered Amazon an estimated <a href="https://www.cnbc.com/2017/10/19/amazon-offered-billions-in-tax-breaks-for-second-us-headquarters.html">$7 billion in tax breaks</a> if it chose Newark for the new headquarters, an offer which some speculated would hurt the city's economic presence, even with the benefits of HQ2. Now that the dust has settled, it's clear the power companies have when making decisions about location. The internet is the same way.
+      </p>
+      <p>
+      It's easy to think of the internet as an ethereal entity, unbounded by physical means, but
+      Ben Mendelsohn's <strong>Bundled, Buried & Behind Closed Doors</strong> reveals the wholly physical reality behind the web. Information on the “cloud” ultimately has to reside on physical storage somewhere, and to travel from place to place it requires cables. This infrastructure is owned by someone, and it's almost never the user.
+      </p>
+      <p>
+      When someone creates a website, they don't run it on their laptop, open to the world. Instead, they use a hosting service, who manages the computational resources needed to actually run the server. It is these hosting services that possess the physical hardware required to bring a website to the internet. In practice, usually these resources are tightly packed geographically and consist of big warehouses of computers, which increases efficiency (and decreases cost).
+      </p>
+      <p>
+      Thus, the act of choosing a hosting service is like Amazon looking for a new headquarters. Once chosen, a hosting service has to allocate resources, which requires physical components and technical expertise. The service has to purchase these components and hire workers, having a similar effect on its local economy that the arrival of Amazon's HQ2 might have (albeit at a smaller scale).
+      </p>
+      <p>
+      Unfortunately, in the case of the internet, this generally leads to the development of already developed areas. The location in which a website lives dictates how quickly people can access it; the speed at which information is received depends largely on the length of cable it must traverse. This, coupled with the fact that most people capable of accessing the internet live in developed areas, means that most sites or are hosted using services with data-centers close to these area.
+      </p>
+      <p>
+      The available regions for hosting on Amazon Web Services is proof of this. They have just 14 hosting regions centered in Virginia, Ohio, California, Oregon, Mumbai, Osaka, Seoul, Singapore, Sydney, Tokyo, Canada, Frankfurt, Ireland, London, Paris, Stockholm, and Sao Paulo, all of which are relatively developed locations. None of these hosting centers reside in, for example, Africa, and so, if popularity of AWS increases, and more people use it for hosting, Africa will not see any of the accompanying economic growth. Because parties wishing to create  a website or application will inevitably choose the hosting option that gives them the best availability to their target audience, the internet inadvertently tightens the economic grip the developed world has over the developing one.
+      </p>
+  </div>
+  <div id="toggle3">
+    <h1>Foreword</h1>
+    <p>
+    In the middle of the course, we turned to humanities datasets. Specifically, we discussed what these datasets can look like
+    and the work that goes in creating them. As a class, we worked on creating our own dataset of transcribed 1950s political science independent studies
+    and used this dataset to create  visualization. Following this, we reflected on our own process and datasets at large, which the response addresses.
+
+    </p>
+    <h1>Visualization</h1>
+    <p><a href="https://jsfiddle.net/joemac875/ab7m83vs/">My visualization is a heat map of the different wars mentioned in the IS dataset</a>. The heat measures the logarithmic frequency of the mentions each war received. I used logarithmic frequency because using raw frequency led to the super frequent wars (e.g Civil War) drowning out the others in terms of heat, making visualization difficult. </p>
+
+    <p>There are 13 wars altogether, and they span quite a bit of the world. One might use this as evidence that armed conflict was a driving force behind poly-sci research at Wooster when the ISes were written. Also, the lack of any conflicts on the African and South American continents might reveal what parts of the world are left out of the discussions found in the ISes. The authorial lenses seem to be focused on Europe, North America, and Asia. This makes a lot of sense, since the ISes were written near the start of the Cold War; Africa and South America didn't become a focus of the superpowers until later.</p>
+    <h1>Response</h1>
+    <p>Creating the IS dataset proved to be quite difficult, and I only worked on a small part! While extracting the metadata from the clean ISes took almost no time at all, the actual cleaning was quite arduous. I attempted to fix the new line issues first, before fixing any spelling issues, in order to separate the two tasks - I found it easier to focus on one problem at a time. When fixing the new lines, I initially just clicked around, hammering the delete button, but then moving on to the easier technique of using the multi-cursor (then I only had to hit delete once after selecting all the lines) in Sublime. Finally, I resorted to adding in a special character where all the new lines actually should've been and used a Python script to replace them and strip out all the false newlines.</p>
+
+    <p>The hardest task was fixing the spelling. There was a lot of slight reordering of sentences (which I did not attempt to fix for the most part), making it difficult to follow along in the text and the PDF. At one point I gave up and tried to manually transcribe the IS, abandoning the OCR, but reverted after a few pages. I ended up using the spell checker suggestions quite a bit and guessing at some words. Once I got the gist of the ISes, this became easier, and there were patterns of mis-spellings to memorize.</p>
+
+    <p>The entire process revealed how inaccurate humanities datasets might be and the factors behind this. First, for the sake of consistency and time, we (as a class) decided upon a standard approach to take that left out certain portions of the IS that could be helpful, like the references. Now that I've had the experience of constructing a dataset, I think I might be able to gauge the sort of time crunch other dataset creators are under depending on their timeline. Thus, I think it's important to consider the relevant dates (i.e when work started and ended) behind a dataset when considering its accuracy.</p>
+
+    <p>Another important factor impacting the integrity of our dataset was the sheer number of people working on it. Each of us introduced our own, slightly different, styles for fixing up the OCR texts, even with the standards we made. Therefore, I think that, while increasing the number of creators shrinks the time required to construct a dataset, it decreases the integrity.</p>
+
+    <p>While browsing the visualizations and metrics of the final dataset on Voyant, I noticed some interesting relationships related to these inaccuracies. The most prominent of these appeared in the word ratios of each IS. This word ratio compares the number of unique words versus total words in the text; a higher word ratio indicates greater variety of word usage. At first I just thought some of the IS authors were a bit drab, since they had much lower ratios than a lot of the other authors. However, then I started to skim through some of the texts. These low word-ratio ISes actually looked quite normal compared to the high ratio texts that had a ton of ‘~'s and misspellings. </p>
+
+    <p>I think the takeaway here is that you could use some of the metrics on Voyant to evaluate the accuracy or integrity of cleaned texts. If you could somehow find a corpus of comparable texts which you know are clean, then you could create a metrics profile for these texts in order to compare the questionable texts with. At the end of the day, at least, it seems best to always be critical of humanities datasets.</p>
+  </div>
+  <div id="toggle4">
+    <h1>Foreword</h1>
+    <p>Throughout the final third of the course (barring the low-barrier tool workshops), we focused on the task
+      of manipulation. Here, we tinkered with Python scripts to generate new texts from existing ones and tried our hand at creating Twitter bots
+      that tweeted out poetic forms. The goal here was to re-present or process existing data in ways that lead to new revelations.
+      The response here proposes a tool that uses an imagined dataset to perform this sort of function.
+    </p>
+    <h1>Response</h1>
+    <p>All too often, people make uninformed decisions about intricate issues and events. This frequently occurs in our consumption of media, which has great affect on both our choices and actions. It is simply too difficult for news companies to pack all the necessary background information into most stories. For example, BCC recently published an article entitled, <a href="https://www.bbc.com/news/world-africa-47840031">Libya crisis: Fighting flares on outskirts of Tripoli</a> containing a mere 600 words. There's no way this article can bring the reader up to speed on the political and historical nuances of the event with such pith, and so the average reader is left to interpret the events in a sort of informational vacuum. This lack of perspective can have a polarizing effect on reader's attitudes towards regions and groups of people.</p>
+
+    <p>Using a combination of independent studies from the social sciences, I believe one could create a tool - which I shall henceforth refer to as Project Metis and discuss as if it exists - that could remedy this problem. At its core, Project Metis is a Twitter bot for regurgitating news articles from BBC (just the link, not the entire text of the article). In addition to an article, however, each tweet contains links to the top three ISes that help explain or give a deeper understanding of the article's topic. In this way, followers of Project Metis have access to academic works that help frame the article's topic and allow the reader to make more informed decisions about news. Of course, this assumes that its Twitter followers care to read any part of the ISes and that the ISes are public, which is not currently the case.</p>
+
+    <p>There are a lot of moving parts in Project Metis, but let us first consider the primary dataset at hand: College of Wooster ISes. These ISes are mostly from the history and political science departments, since they produce the most survey style (for lack of a better word) writings. The dataset includes ISes from every era as well, to obtain maximum coverage. ISes from different eras can also reveal information about opinions during those eras, further enriching a reader's experience with a news article.  In addition to the contents of an IS, each entry in the dataset is also paired with a list of keywords, dates, and locations that pertain to the contains. Optimally, these lists would be annotated by hand, since these might be the most accurate. However, given the scale of such a task, Project Metis uses Amazon Comprehend to extract such phrases and words from the texts. Project Metis also leverages the tags found on OpenWorks to curate the dataset.  This dataset represents the static data that Project Metis uses, and only changes annually, as new ISes are published. </p>
+
+    <p>The dynamic part of Project Metis involves grabbing news articles from BBC and analyzing their content. Project Metis uses the <a href="https://newsapi.org/s/bbc-news-api">BBC API</a> in order to grab the textual content from political news articles as they are published. It then sends this text off to Amazon Comprehend to extract the text's key phrases. With this information, Project Metis then assigns each IS a score based on how many of its key phrases match those in the article. Finally, a tweet is assembled by combining the links to the article and the two or three ISes with the greatest score. This tweet is published using the Twitter API. In the future, the list of key phrases for articles and ISes will be paired with weights to indicate their importance, but for the time being Project Metis uses basic matching.</p>
+
+    <p>Let us consider the article mentioned earlier, “Libya crisis: Fighting flares on outskirts of Tripoli.” Given this article, Project Metis might decide to accompany the article with <a href="https://openworks.wooster.edu/independentstudy/4965">State-Sponsored Terrorism in the Middle East</a>,  <a href="https://openworks.wooster.edu/independentstudy/559">Revolution Has Gone Viral: the Effect of Facebook and Youtube on Social Movement Mobilization Within the Arab Spring</a>, or  <a href="https://openworks.wooster.edu/independentstudy/7063">How do Strategic Resources Affect Relations Between States?</a>. In this way, the reader is exposed to ISes that highlight the political history of the region and factors that might lead to the events in the article.  </p>
+  </div>
+  <div id="toggle5">
+  </div>
+  <div id="toggle6">
+  </div>
+  <div id="toggle7">
+  </div>
+</div>
+
+<script type="text/javascript">
+	// create an array with nodes
+
+	var nodes = new vis.DataSet([
+    {id: 1, margin:25,font:{face:'Roboto Condensed', size:36},shape: 'box', label: 'Destination\nDigital\nHumanities', fixed: true},
+		{id: 2, widthConstraint: 125,label: 'Power'},
+		{id: 3, widthConstraint: 125,label: 'Data'},
+		{id: 4, widthConstraint: 125,label: 'Manipulation'},
+		{id: 5, widthConstraint: 125,label: 'Synthesis'}
+	]);
+
+
+	// create an array with edges
+	var edges = new vis.DataSet([
+		{from: 2, to: 3,smooth: false, arrows:'to'},
+		{from: 3, to: 4,smooth: false, arrows:'to'},
+    {from: 4, to: 5,smooth: false, arrows:'to'}
+	]);
+	// container element
+	var container = document.getElementById('mynetwork');
+	var data = {
+		nodes: nodes,
+		edges: edges
+	};
+	// disable physics
+	var options = { interaction: {dragNodes : false, dragView : false, zoomView : false},
+                  width: (window.innerWidth - 0) + "px" /2,
+				          height: (window.innerHeight - 0) + "px",
+                  physics: {enabled: false},
+                  edges:{
+                      arrowStrikethrough: false,
+                      width: 5
+                  },
+                  nodes:{
+                    borderWidth: 0,
+                    shape: 'circle',
+                    color: {background:'#eae7dc', border: '#21283F', highlight:'#DF7D70'},
+
+                    font:{face:'Roboto Condensed', size:24}
+                  }};
+	// create network
+	var network = new vis.Network(container, data, options);
+  network.on( 'click', function(properties) {
+
+    var ids = properties.nodes;
+    var clickedNodes = nodes.get(ids);
+    toggle(nodes.length, clickedNodes[0].id);
+    console.log('clicked nodes:', clickedNodes[0].id);
+});
+	// get original positions
+  console.log(document.getElementById("mynetwork").clientWidth);
+  var side_length = document.getElementById("mynetwork").clientWidth / 3;
+  var radian_increase = (2*Math.PI)/(nodes.length-1);
+  var radians = 0;
+  // set the start nodes position at 0
+  network.moveNode(1,0,0);
+  // set the position of each other node
+  for (i = 2; i < nodes.length+1; i++){
+    network.moveNode(i,Math.sin(radians) * side_length, -1 * Math.cos(radians) * side_length);
+    console.log(radian_increase);
+    radians = radians + radian_increase;
+  }
+
+	var positions = network.getPositions();
+
+
+	// animation properties
+	var k = 0, lambda = 0, tick = 10, totalTime = 750;
+
+	// toy example start x, y coordinates nodes
+	var x_start = 0, y_start = 0
+	// nr of steps, given tick time and total animation time
+	var nrOfSteps = Math.floor( totalTime / tick);
+	// perform moveNode every tick nr of milliseconds
+	timer = setInterval(function(){
+
+		// iteration counter
+		k++;
+		// lambda (for convex combination)
+		var l = k / nrOfSteps;
+		for (i = 1; i < nodes.length+1; i++) {
+
+			// get target positions
+			var x_target = positions[i].x;
+			var y_target = positions[i].y;
+
+			// compute the convex combination of x_start and x_target to find intermediate x and move node to it, same for y
+			var xt = x_start * (1 - l) + x_target * l;
+			var yt = y_start * (1 - l) + y_target * l;
+
+			// move node
+		    network.moveNode(i,xt,yt);
+		}
+
+		// stop if we have reached nr of steps
+		if(k == nrOfSteps){
+			clearInterval(timer)
+		}
+	},tick);
+
+
+  // Toggling text chunks on and off
+
+  function toggle(n,j) {
+    for (i = 1; i < n + 1; i ++){
+      var elm = document.getElementById("toggle"+i.toString());
+      elm.style.display = "none";
+    }
+    var elm = document.getElementById("toggle"+j.toString());
+    elm.style.display = "block";
+}
+</script>
+</body>
+</html>

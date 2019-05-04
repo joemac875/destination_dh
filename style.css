@@ -15,12 +15,12 @@
 #toggle1 {
   background-color: #eae7dc;
   display:block;
-  
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-#toggle2, #toggle3, #toggle4 {
+#toggle2, #toggle3, #toggle4, #toggle5 {
   background-color: #eae7dc;
   display:none;
 }
